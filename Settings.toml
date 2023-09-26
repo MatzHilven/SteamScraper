@@ -1,0 +1,8 @@
+users = [
+    "id/LenC08",
+    "id/JSRLCS",
+    "profiles/76561198946774698",
+    "/id/DudePT",
+]
+scraper_interval = 5
+user_interval = 1
