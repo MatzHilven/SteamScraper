@@ -1,4 +1,4 @@
-use std::fs::create_dir;
+use std::fs::create_dir_all;
 use std::thread::sleep;
 use std::time::Duration;
 
@@ -20,9 +20,7 @@ fn main() {
         user_interval: config.get("user_interval").unwrap(),
     };
 
-    if !std::path::Path::new("logs").exists() {
-        create_dir("logs").expect("Unable to create logs directory");
-    }
+    create_dir_all("logs").expect("Unable to create logs directory");
 
     let interval = Duration::from_secs(settings.scraper_interval);
     loop {
