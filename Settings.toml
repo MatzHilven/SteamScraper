@@ -4,5 +4,5 @@ users = [
     "profiles/76561198946774698",
     "/id/DudePT",
 ]
-scraper_interval = 5
+scraper_interval = 60
 user_interval = 1

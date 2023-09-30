@@ -20,7 +20,10 @@ fn main() {
         user_interval: config.get("user_interval").unwrap(),
     };
 
-    create_dir_all("logs").expect("Unable to create logs directory");
+    if !std::path::Path::new("logs").exists() {
+        println!("Creating logs directory");
+        create_dir_all("logs").expect("Unable to create logs directory");
+    }
 
     let interval = Duration::from_secs(settings.scraper_interval);
     loop {
