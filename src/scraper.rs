@@ -1,6 +1,8 @@
 use std::thread::sleep;
 use std::time::Duration;
+
 use steam_scraper::Status;
+
 use crate::Settings;
 
 pub fn scrape(settings: Settings) {
@@ -29,9 +31,8 @@ fn scrape_user(user: String) {
                 let game_selector = scraper::Selector::parse(".profile_in_game_name").unwrap();
                 let game = document.select(&game_selector).next().unwrap().inner_html();
                 Status::Playing(game)
-            },
+            }
         };
         status.log_with_time(user.as_str());
     });
-
 }

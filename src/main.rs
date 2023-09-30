@@ -1,10 +1,12 @@
-mod scraper;
-
 use std::fs::create_dir;
 use std::thread::sleep;
 use std::time::Duration;
+
 use config::Config;
+
 use steam_scraper::Settings;
+
+mod scraper;
 
 fn main() {
     let config = Config::builder()
@@ -27,5 +29,4 @@ fn main() {
         scraper::scrape(settings.clone());
         sleep(interval);
     }
-
 }

@@ -27,8 +27,8 @@ impl Display for Status {
 
 impl Status {
     pub fn log_with_time(self, user: &str) {
-        let path = format!("logs/{}.log",  user.replace("id/", "").replace("profiles/", ""));
-        let time =  chrono::Local::now().format("%Y-%m-%d %H:%M:%S");
+        let path = format!("logs/{}.log", user.replace("id/", "").replace("profiles/", ""));
+        let time = chrono::Local::now().format("%Y-%m-%d %H:%M:%S");
         let format = format!("{} - {}\n", time, self);
 
         let mut file = match OpenOptions::new().write(true).append(true).open(path.as_str()) {
@@ -37,6 +37,5 @@ impl Status {
         };
 
         file.write_all(format.as_bytes()).expect("Unable to write data");
-
     }
 }
