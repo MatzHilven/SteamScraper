@@ -1,8 +1,6 @@
 users = [
-    "id/LenC08",
-    "id/JSRLCS",
-    "profiles/76561198946774698",
-    "/id/DudePT",
+    "id/xxxx",
+    "profiles/xxx",
 ]
 scraper_interval = 60
 user_interval = 1
